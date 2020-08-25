@@ -1,0 +1,15 @@
+{
+	"tecs":
+	{
+		"time=(?<time>\d+)[^ ]+ (?<caller>[^-]+)->(?<callee>[^\.]+).enter\((?<sig>[^;\)]+)(; (?<arg>[^\)]+))?\)":
+		[
+		  	"\[${time}\]${caller}.call(${callee},${sig},${arg})",
+		  	"\[${time}\]${callee}.called(${caller},${sig},${arg})"
+		],
+		"time=(?<time>\d+)[^ ]+ (?<caller>[^-]+)->(?<callee>[^\.]+).leave\((?<sig>[^;\)]+)(; (?<ret>[^\)]+))?\)":
+		[
+		  	"\[${time}\]${callee}.return(${caller},${sig},${ret})",
+			"\[${time}\]${caller}.callback(${callee},${sig},${ret})"
+		]
+	}
+}

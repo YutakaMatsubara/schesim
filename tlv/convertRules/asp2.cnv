@@ -1,0 +1,8 @@
+{
+  "asp2": {
+    "$STYLE": "script",
+    "fileName": "c:/cygwin/bin/ruby",
+    "arguments": "{0}",
+    "script" : "puts '[1]TASK1.state=RUNNING'"
+  },
+}

@@ -1,0 +1,45 @@
+﻿{
+	"asp-tp":{
+		"VisualizeRules":{
+			"appStateChange":{
+				"DisplayName":"状態遷移",
+				"Target":"Application",
+				"Shapes":{
+					"appChangeEvent":{
+						"DisplayName":"状態",
+						"From":"${TARGET}.state",
+						"To":"${TARGET}.state",
+						"Figures":{
+							"${FROM_VAL}==RUNNING"			:"runningShapes",
+							"${FROM_VAL}==RUNNABLE"			:"runnableShapes",
+						    "${FROM_VAL}==EXPIRED"             :[
+						        "waitingShapes",
+						        {"${TO_VAL}==RUNNABLE"  :"waitingToRunnableShapes"}
+						    ]
+						}
+					},
+					"activateHappenEvent":{
+						"DisplayName":"起動",
+						"When":"${TARGET}.activate()",
+						"Figures":"activateShapes"
+					},
+					"exitHappenEvent":{
+						"DisplayName":"終了",
+						"When":"${TARGET}.exit()",
+						"Figures":"exitShapes"
+					},
+					"expiredHappenEvent":{
+						"DisplayName":"満了",
+						"When":"${TARGET}.expired()",
+						"Figures":"terminateShapes"
+					},
+					"changeBudget":{
+						"DisplayName":"バジェット変化",
+						"When":"${TARGET}.budget",
+						"Figures":"budgetShapes(${VAL})"
+					}
+				}
+			}
+		}
+	}
+}

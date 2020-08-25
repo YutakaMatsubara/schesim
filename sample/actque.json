@@ -1,0 +1,54 @@
+{
+  "cpu": [
+    {
+      "id": 1,
+      "core": [
+        {
+          "scheduling": "edf",
+          "application": [
+            {
+              "scheduling": "fp",
+              "share": 1,
+              "period": 10,
+              "id": 1,
+              "task": [
+                {
+                  "period": 10,
+                  "priority": 5,
+                  "id": 1,
+                  "deadline": 10,
+                  "wcet": 4,
+                  "offset": 0,
+                  "attr": "cyclic",
+                  "max_actcnt": 1
+                },
+                {
+                  "period": 10,
+                  "priority": 6,
+                  "id": 2,
+                  "deadline": 10,
+                  "wcet": 4,
+				  "offset": 0,
+                  "attr": "cyclic",
+                  "max_actcnt": 1
+                },
+                {
+                  "period": 10,
+                  "priority": 7,
+                  "id": 3,
+                  "deadline": 10,
+                  "wcet": 3,
+                  "offset": 0,
+                  "attr": "cyclic",
+                  "max_actcnt": 1
+                }
+              ],
+              "pri": 1
+            }
+          ],
+          "id": 1
+        }
+      ]
+    }
+  ]
+}

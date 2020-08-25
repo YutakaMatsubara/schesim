@@ -1,0 +1,42 @@
+{
+  "cpu": [
+    {
+      "id": 1,
+      "core": [
+        {
+          "id": 1,
+          "scheduling": "fp",
+          "application": [
+            {
+              "pri": 1,
+	      "period": 10,
+              "scheduling": "fp",
+              "share": 1.0,
+              "id": 1,
+              "task": [
+                {
+                  "period": 10,
+                  "priority": 1,
+                  "id": 1,
+                  "deadline": 10,
+		  "offset": 0,
+                  "attr": "cyclic",
+                  "wcet": 3
+                },
+                {
+                  "period": 15,
+                  "priority": 2,
+                  "id": 2,
+                  "deadline": 15,
+		  "offset": 0,
+                  "attr": "cyclic",
+                  "wcet": 7
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

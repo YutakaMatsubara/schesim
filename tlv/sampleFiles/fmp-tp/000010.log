@@ -1,0 +1,383 @@
+[1]:[1]: budget of application 1 is 10.
+"fp"
+"fp and edf"
+[1]:[1]: budget of application 2 is 10.
+"fp"
+"fp and edf"
+id = 1, pri= 1, p = 24, c = 10, d = 24, u = 0.416667, shortage_flag = false, shortage = 0
+id = 2, pri= 2, p = 14, c = 4, d = 14, u = 0.285714, shortage_flag = false, shortage = 0
+id = 3, pri= 3, p = 16, c = 2, d = 16, u = 0.125000, shortage_flag = false, shortage = 0
+id = 1, p = 1, d = 1, share = 1.000000.
+LCM = 336.000000
+U = 0.827381
+id = 4, pri= 1, p = 1, c = 10, d = 10, u = 10.000000, shortage_flag = false, shortage = 0
+id = 2, p = 1, d = 1, share = 1.000000.
+LCM = 1.000000
+U = 10.000000
+CORE LCM = 336.000000
+CORE U = 10.827381
+[1]:[2]: budget of application 3 is 10.
+"fp"
+"fp and edf"
+[1]:[2]: budget of application 4 is 10.
+"fp"
+"fp and edf"
+id = 5, pri= 1, p = 24, c = 10, d = 24, u = 0.416667, shortage_flag = false, shortage = 0
+id = 6, pri= 2, p = 14, c = 4, d = 14, u = 0.285714, shortage_flag = false, shortage = 0
+id = 7, pri= 3, p = 16, c = 2, d = 16, u = 0.125000, shortage_flag = false, shortage = 0
+id = 3, p = 1, d = 1, share = 1.000000.
+LCM = 336.000000
+U = 0.827381
+id = 8, pri= 1, p = 1, c = 10, d = 10, u = 10.000000, shortage_flag = false, shortage = 0
+id = 4, p = 1, d = 1, share = 1.000000.
+LCM = 1.000000
+U = 10.000000
+CORE LCM = 336.000000
+CORE U = 10.827381
+simulation time = 100001
+[1]:[1]: task 1 becomes RUNNABLE.
+[1]:[1]: task 2 becomes RUNNABLE.
+[1]:[1]: task 3 becomes RUNNABLE.
+[1]:[1]: application 1 becomes EXPIRED.
+[1]:[1]: application 1 becomes RUNNABLE.
+[1]:[1]: dispatch to task 1.
+[1]:[1]: task 4 becomes RUNNABLE.
+[1]:[1]: application 2 becomes EXPIRED.
+[1]:[1]: application 2 becomes RUNNABLE.
+[1]:[1]: dispatch to task 4.
+[1]:[1]: dispatch to application 1.
+[1]:[1]: task 1 becomes RUNNABLE.
+[1]:[1]: dispatch to task 1.
+[1]:[1]: task 4 becomes RUNNABLE.
+[1]:[2]: task 5 becomes RUNNABLE.
+[1]:[2]: task 6 becomes RUNNABLE.
+[1]:[2]: task 7 becomes RUNNABLE.
+[1]:[2]: application 3 becomes EXPIRED.
+[1]:[2]: application 3 becomes RUNNABLE.
+[1]:[2]: dispatch to task 5.
+[1]:[2]: task 8 becomes RUNNABLE.
+[1]:[2]: application 4 becomes EXPIRED.
+[1]:[2]: application 4 becomes RUNNABLE.
+[1]:[2]: dispatch to task 8.
+[1]:[2]: dispatch to application 3.
+[1]:[2]: task 5 becomes RUNNABLE.
+[1]:[2]: dispatch to task 5.
+[1]:[2]: task 8 becomes RUNNABLE.
+[2]:[1]: budget of application 1 is 0.
+[2]:[1]: application 1 becomes EXPIRED.
+[2]:[1]: virtual time of application 1 with deadline 2 is 2.0.
+[2]:[1]: virtual time of application 2 with deadline 2 is 1.
+[2]:[2]: budget of application 3 is 0.
+[2]:[2]: application 3 becomes EXPIRED.
+[2]:[2]: virtual time of application 3 with deadline 2 is 2.0.
+[2]:[2]: virtual time of application 4 with deadline 2 is 1.
+[2]:[1]: budget of application 1 is 10.
+[2]:[1]: application 1 becomes RUNNABLE.
+[2]:[1]: budget of application 2 is 10.
+[2]:[1]: task 4 stores an activation request.
+[2]:[1]: dispatch to application 2.
+[2]:[1]: task 1 becomes RUNNABLE.
+[2]:[1]: task 4 becomes RUNNABLE.
+[2]:[1]: dispatch to task 4.
+[2]:[2]: budget of application 3 is 10.
+[2]:[2]: application 3 becomes RUNNABLE.
+[2]:[2]: budget of application 4 is 10.
+[2]:[2]: task 8 stores an activation request.
+[2]:[2]: dispatch to application 4.
+[2]:[2]: task 5 becomes RUNNABLE.
+[2]:[2]: task 8 becomes RUNNABLE.
+[2]:[2]: dispatch to task 8.
+[3]:[1]: budget of application 2 is 0.
+[3]:[1]: application 2 becomes EXPIRED.
+[3]:[1]: virtual time of application 1 with deadline 3.0 is 2.0.
+[3]:[1]: virtual time of application 2 with deadline 3.0 is 2.0.
+[3]:[2]: budget of application 4 is 0.
+[3]:[2]: application 4 becomes EXPIRED.
+[3]:[2]: virtual time of application 3 with deadline 3.0 is 2.0.
+[3]:[2]: virtual time of application 4 with deadline 3.0 is 2.0.
+[3]:[1]: budget of application 1 is 10.
+[3]:[1]: budget of application 2 is 10.
+[3]:[1]: application 2 becomes RUNNABLE.
+[3]:[1]: task 4 stores an activation request.
+[3]:[1]: dispatch to application 1.
+[3]:[1]: task 1 becomes RUNNABLE.
+[3]:[1]: dispatch to task 1.
+[3]:[1]: task 4 becomes RUNNABLE.
+[3]:[2]: budget of application 3 is 10.
+[3]:[2]: budget of application 4 is 10.
+[3]:[2]: application 4 becomes RUNNABLE.
+[3]:[2]: task 8 stores an activation request.
+[3]:[2]: dispatch to application 3.
+[3]:[2]: task 5 becomes RUNNABLE.
+[3]:[2]: dispatch to task 5.
+[3]:[2]: task 8 becomes RUNNABLE.
+[4]:[1]: budget of application 1 is 0.
+[4]:[1]: application 1 becomes EXPIRED.
+[4]:[1]: virtual time of application 1 with deadline 4.0 is 3.0.
+[4]:[1]: virtual time of application 2 with deadline 4.0 is 2.0.
+[4]:[2]: budget of application 3 is 0.
+[4]:[2]: application 3 becomes EXPIRED.
+[4]:[2]: virtual time of application 3 with deadline 4.0 is 3.0.
+[4]:[2]: virtual time of application 4 with deadline 4.0 is 2.0.
+[4]:[1]: budget of application 1 is 10.
+[4]:[1]: application 1 becomes RUNNABLE.
+[4]:[1]: budget of application 2 is 10.
+[4]:[1]: task 4 stores an activation request.
+[4]:[1]: dispatch to application 2.
+[4]:[1]: task 1 becomes RUNNABLE.
+[4]:[1]: task 4 becomes RUNNABLE.
+[4]:[1]: dispatch to task 4.
+[4]:[2]: budget of application 3 is 10.
+[4]:[2]: application 3 becomes RUNNABLE.
+[4]:[2]: budget of application 4 is 10.
+[4]:[2]: task 8 stores an activation request.
+[4]:[2]: dispatch to application 4.
+[4]:[2]: task 5 becomes RUNNABLE.
+[4]:[2]: task 8 becomes RUNNABLE.
+[4]:[2]: dispatch to task 8.
+[5]:[1]: budget of application 2 is 0.
+[5]:[1]: application 2 becomes EXPIRED.
+[5]:[1]: virtual time of application 1 with deadline 5.0 is 3.0.
+[5]:[1]: virtual time of application 2 with deadline 5.0 is 3.0.
+[5]:[2]: budget of application 4 is 0.
+[5]:[2]: application 4 becomes EXPIRED.
+[5]:[2]: virtual time of application 3 with deadline 5.0 is 3.0.
+[5]:[2]: virtual time of application 4 with deadline 5.0 is 3.0.
+[5]:[1]: budget of application 1 is 10.
+[5]:[1]: budget of application 2 is 10.
+[5]:[1]: application 2 becomes RUNNABLE.
+[5]:[1]: task 4 stores an activation request.
+[5]:[1]: dispatch to application 1.
+[5]:[1]: task 1 becomes RUNNABLE.
+[5]:[1]: dispatch to task 1.
+[5]:[1]: task 4 becomes RUNNABLE.
+[5]:[2]: budget of application 3 is 10.
+[5]:[2]: budget of application 4 is 10.
+[5]:[2]: application 4 becomes RUNNABLE.
+[5]:[2]: task 8 stores an activation request.
+[5]:[2]: dispatch to application 3.
+[5]:[2]: task 5 becomes RUNNABLE.
+[5]:[2]: dispatch to task 5.
+[5]:[2]: task 8 becomes RUNNABLE.
+[6]:[1]: budget of application 1 is 0.
+[6]:[1]: application 1 becomes EXPIRED.
+[6]:[1]: virtual time of application 1 with deadline 6.0 is 4.0.
+[6]:[1]: virtual time of application 2 with deadline 6.0 is 3.0.
+[6]:[2]: budget of application 3 is 0.
+[6]:[2]: application 3 becomes EXPIRED.
+[6]:[2]: virtual time of application 3 with deadline 6.0 is 4.0.
+[6]:[2]: virtual time of application 4 with deadline 6.0 is 3.0.
+[6]:[1]: budget of application 1 is 10.
+[6]:[1]: application 1 becomes RUNNABLE.
+[6]:[1]: budget of application 2 is 10.
+[6]:[1]: task 4 stores an activation request.
+[6]:[1]: dispatch to application 2.
+[6]:[1]: task 1 becomes RUNNABLE.
+[6]:[1]: task 4 becomes RUNNABLE.
+[6]:[1]: dispatch to task 4.
+[6]:[2]: budget of application 3 is 10.
+[6]:[2]: application 3 becomes RUNNABLE.
+[6]:[2]: budget of application 4 is 10.
+[6]:[2]: task 8 stores an activation request.
+[6]:[2]: dispatch to application 4.
+[6]:[2]: task 5 becomes RUNNABLE.
+[6]:[2]: task 8 becomes RUNNABLE.
+[6]:[2]: dispatch to task 8.
+[7]:[1]: budget of application 2 is 0.
+[7]:[1]: application 2 becomes EXPIRED.
+[7]:[1]: virtual time of application 1 with deadline 7.0 is 4.0.
+[7]:[1]: virtual time of application 2 with deadline 7.0 is 4.0.
+[7]:[2]: budget of application 4 is 0.
+[7]:[2]: application 4 becomes EXPIRED.
+[7]:[2]: virtual time of application 3 with deadline 7.0 is 4.0.
+[7]:[2]: virtual time of application 4 with deadline 7.0 is 4.0.
+[7]:[1]: budget of application 1 is 10.
+[7]:[1]: budget of application 2 is 10.
+[7]:[1]: application 2 becomes RUNNABLE.
+[7]:[1]: task 4 stores an activation request.
+[7]:[1]: dispatch to application 1.
+[7]:[1]: task 1 becomes RUNNABLE.
+[7]:[1]: dispatch to task 1.
+[7]:[1]: task 4 becomes RUNNABLE.
+[7]:[2]: budget of application 3 is 10.
+[7]:[2]: budget of application 4 is 10.
+[7]:[2]: application 4 becomes RUNNABLE.
+[7]:[2]: task 8 stores an activation request.
+[7]:[2]: dispatch to application 3.
+[7]:[2]: task 5 becomes RUNNABLE.
+[7]:[2]: dispatch to task 5.
+[7]:[2]: task 8 becomes RUNNABLE.
+[8]:[1]: budget of application 1 is 0.
+[8]:[1]: application 1 becomes EXPIRED.
+[8]:[1]: virtual time of application 1 with deadline 8.0 is 5.0.
+[8]:[1]: virtual time of application 2 with deadline 8.0 is 4.0.
+[8]:[2]: budget of application 3 is 0.
+[8]:[2]: application 3 becomes EXPIRED.
+[8]:[2]: virtual time of application 3 with deadline 8.0 is 5.0.
+[8]:[2]: virtual time of application 4 with deadline 8.0 is 4.0.
+[8]:[1]: budget of application 1 is 10.
+[8]:[1]: application 1 becomes RUNNABLE.
+[8]:[1]: budget of application 2 is 10.
+[8]:[1]: task 4 stores an activation request.
+[8]:[1]: dispatch to application 2.
+[8]:[1]: task 1 becomes RUNNABLE.
+[8]:[1]: task 4 becomes RUNNABLE.
+[8]:[1]: dispatch to task 4.
+[8]:[2]: budget of application 3 is 10.
+[8]:[2]: application 3 becomes RUNNABLE.
+[8]:[2]: budget of application 4 is 10.
+[8]:[2]: task 8 stores an activation request.
+[8]:[2]: dispatch to application 4.
+[8]:[2]: task 5 becomes RUNNABLE.
+[8]:[2]: task 8 becomes RUNNABLE.
+[8]:[2]: dispatch to task 8.
+[9]:[1]: budget of application 2 is 0.
+[9]:[1]: application 2 becomes EXPIRED.
+[9]:[1]: virtual time of application 1 with deadline 9.0 is 5.0.
+[9]:[1]: virtual time of application 2 with deadline 9.0 is 5.0.
+[9]:[2]: budget of application 4 is 0.
+[9]:[2]: application 4 becomes EXPIRED.
+[9]:[2]: virtual time of application 3 with deadline 9.0 is 5.0.
+[9]:[2]: virtual time of application 4 with deadline 9.0 is 5.0.
+[9]:[1]: budget of application 1 is 10.
+[9]:[1]: budget of application 2 is 10.
+[9]:[1]: application 2 becomes RUNNABLE.
+[9]:[1]: task 4 stores an activation request.
+[9]:[1]: dispatch to application 1.
+[9]:[1]: task 1 becomes RUNNABLE.
+[9]:[1]: dispatch to task 1.
+[9]:[1]: task 4 becomes RUNNABLE.
+[9]:[2]: budget of application 3 is 10.
+[9]:[2]: budget of application 4 is 10.
+[9]:[2]: application 4 becomes RUNNABLE.
+[9]:[2]: task 8 stores an activation request.
+[9]:[2]: dispatch to application 3.
+[9]:[2]: task 5 becomes RUNNABLE.
+[9]:[2]: dispatch to task 5.
+[9]:[2]: task 8 becomes RUNNABLE.
+[10]:[1]: budget of application 1 is 0.
+[10]:[1]: application 1 becomes EXPIRED.
+[10]:[1]: virtual time of application 1 with deadline 10.0 is 6.0.
+[10]:[1]: virtual time of application 2 with deadline 10.0 is 5.0.
+[10]:[2]: budget of application 3 is 0.
+[10]:[2]: application 3 becomes EXPIRED.
+[10]:[2]: virtual time of application 3 with deadline 10.0 is 6.0.
+[10]:[2]: virtual time of application 4 with deadline 10.0 is 5.0.
+[10]:[1]: budget of application 1 is 10.
+[10]:[1]: application 1 becomes RUNNABLE.
+[10]:[1]: budget of application 2 is 10.
+[10]:[1]: task 4 stores an activation request.
+[10]:[1]: dispatch to application 2.
+[10]:[1]: task 1 becomes RUNNABLE.
+[10]:[1]: task 4 becomes RUNNABLE.
+[10]:[1]: dispatch to task 4.
+[10]:[2]: budget of application 3 is 10.
+[10]:[2]: application 3 becomes RUNNABLE.
+[10]:[2]: budget of application 4 is 10.
+[10]:[2]: task 8 stores an activation request.
+[10]:[2]: dispatch to application 4.
+[10]:[2]: task 5 becomes RUNNABLE.
+[10]:[2]: task 8 becomes RUNNABLE.
+[10]:[2]: dispatch to task 8.
+[11]:[1]: budget of application 2 is 0.
+[11]:[1]: application 2 becomes EXPIRED.
+[11]:[1]: virtual time of application 1 with deadline 11.0 is 6.0.
+[11]:[1]: virtual time of application 2 with deadline 11.0 is 6.0.
+[11]:[2]: budget of application 4 is 0.
+[11]:[2]: application 4 becomes EXPIRED.
+[11]:[2]: virtual time of application 3 with deadline 11.0 is 6.0.
+[11]:[2]: virtual time of application 4 with deadline 11.0 is 6.0.
+[11]:[1]: budget of application 1 is 10.
+[11]:[1]: budget of application 2 is 10.
+[11]:[1]: application 2 becomes RUNNABLE.
+[11]:[1]: task 4 stores an activation request.
+[11]:[1]: dispatch to application 1.
+[11]:[1]: task 1 becomes RUNNABLE.
+[11]:[1]: dispatch to task 1.
+[11]:[1]: task 4 becomes RUNNABLE.
+[11]:[2]: budget of application 3 is 10.
+[11]:[2]: budget of application 4 is 10.
+[11]:[2]: application 4 becomes RUNNABLE.
+[11]:[2]: task 8 stores an activation request.
+[11]:[2]: dispatch to application 3.
+[11]:[2]: task 5 becomes RUNNABLE.
+[11]:[2]: dispatch to task 5.
+[11]:[2]: task 8 becomes RUNNABLE.
+[12]:[1]: budget of application 1 is 0.
+[12]:[1]: application 1 becomes EXPIRED.
+[12]:[1]: virtual time of application 1 with deadline 12.0 is 7.0.
+[12]:[1]: virtual time of application 2 with deadline 12.0 is 6.0.
+[12]:[2]: budget of application 3 is 0.
+[12]:[2]: application 3 becomes EXPIRED.
+[12]:[2]: virtual time of application 3 with deadline 12.0 is 7.0.
+[12]:[2]: virtual time of application 4 with deadline 12.0 is 6.0.
+[12]:[1]: budget of application 1 is 10.
+[12]:[1]: application 1 becomes RUNNABLE.
+[12]:[1]: budget of application 2 is 10.
+[12]:[1]: task 4 stores an activation request.
+[12]:[1]: dispatch to application 2.
+[12]:[1]: task 1 becomes RUNNABLE.
+[12]:[1]: task 4 becomes RUNNABLE.
+[12]:[1]: dispatch to task 4.
+[12]:[2]: budget of application 3 is 10.
+[12]:[2]: application 3 becomes RUNNABLE.
+[12]:[2]: budget of application 4 is 10.
+[12]:[2]: task 8 stores an activation request.
+[12]:[2]: dispatch to application 4.
+[12]:[2]: task 5 becomes RUNNABLE.
+[12]:[2]: task 8 becomes RUNNABLE.
+[12]:[2]: dispatch to task 8.
+[13]:[1]: budget of application 2 is 0.
+[13]:[1]: application 2 becomes EXPIRED.
+[13]:[1]: virtual time of application 1 with deadline 13.0 is 7.0.
+[13]:[1]: virtual time of application 2 with deadline 13.0 is 7.0.
+[13]:[2]: budget of application 4 is 0.
+[13]:[2]: application 4 becomes EXPIRED.
+[13]:[2]: virtual time of application 3 with deadline 13.0 is 7.0.
+[13]:[2]: virtual time of application 4 with deadline 13.0 is 7.0.
+[13]:[1]: budget of application 1 is 10.
+[13]:[1]: budget of application 2 is 10.
+[13]:[1]: application 2 becomes RUNNABLE.
+[13]:[1]: task 4 stores an activation request.
+[13]:[1]: dispatch to application 1.
+[13]:[1]: task 1 becomes RUNNABLE.
+[13]:[1]: dispatch to task 1.
+[13]:[1]: task 4 becomes RUNNABLE.
+[13]:[2]: budget of application 3 is 10.
+[13]:[2]: budget of application 4 is 10.
+[13]:[2]: application 4 becomes RUNNABLE.
+[13]:[2]: task 8 stores an activation request.
+[13]:[2]: dispatch to application 3.
+[13]:[2]: task 5 becomes RUNNABLE.
+[13]:[2]: dispatch to task 5.
+[13]:[2]: task 8 becomes RUNNABLE.
+[14]:[1]: budget of application 1 is 0.
+[14]:[1]: application 1 becomes EXPIRED.
+[14]:[1]: virtual time of application 1 with deadline 14.0 is 8.0.
+[14]:[1]: virtual time of application 2 with deadline 14.0 is 7.0.
+[14]:[2]: budget of application 3 is 0.
+[14]:[2]: application 3 becomes EXPIRED.
+[14]:[2]: virtual time of application 3 with deadline 14.0 is 8.0.
+[14]:[2]: virtual time of application 4 with deadline 14.0 is 7.0.
+[14]:[1]: budget of application 1 is 10.
+[14]:[1]: application 1 becomes RUNNABLE.
+[14]:[1]: budget of application 2 is 10.
+[14]:[1]: task 4 stores an activation request.
+[14]:[1]: dispatch to application 2.
+[14]:[1]: task 1 becomes RUNNABLE.
+[14]:[1]: task 4 becomes RUNNABLE.
+[14]:[1]: dispatch to task 4.
+[14]:[2]: budget of application 3 is 10.
+[14]:[2]: application 3 becomes RUNNABLE.
+[14]:[2]: budget of application 4 is 10.
+[14]:[2]: task 8 stores an activation request.
+[14]:[2]: dispatch to application 4.
+[14]:[2]: task 5 becomes RUNNABLE.
+[14]:[2]: task 8 becomes RUNNABLE.
+[14]:[2]: dispatch to task 8.
+[15]:[1]: budget of application 2 is 0.
+[15]:[1]: application 2 becomes EXPIRED.
+[15]:[1]: virtual time of application 1 with deadline 15.0 is 8.0.
+[15]:[1]: virtual time of application 2 with deadline 15.0 is 8.0.
+[15]:[1]: task 2 misses deadline.
+Deadline miss occurred.

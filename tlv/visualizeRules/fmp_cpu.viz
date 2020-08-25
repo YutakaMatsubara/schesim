@@ -1,0 +1,19 @@
+﻿{
+	"fmp_":{
+		"VisualizeRules":{
+			"load":{
+				"DisplayName":"ロード",
+                                "Style": "Script",
+                                "FileName": "c:/cygwin/bin/ruby",
+                                "Arguments": "visualizeScript/fmp_load.rb"
+			},
+			"loadAverage":{
+				"DisplayName":"ロードアベレージ",
+                                "Style": "Script",
+                                "FileName": "c:/cygwin/bin/ruby",
+                                "Arguments": "visualizeScript/fmp_load_avg.rb"
+			}      
+
+		}
+	}
+}

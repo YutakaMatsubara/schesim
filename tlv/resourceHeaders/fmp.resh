@@ -1,0 +1,439 @@
+{
+	"fmp":
+	{
+		"Context":{
+			"DisplayName":"コンテキスト",
+			"Attributes":{
+				"name":{
+					"VariableType"	:"String",
+					"DisplayName"	:"コンテキスト名",
+					"AllocationType":"Dynamic",
+					"CanGrouping"	:false
+				}
+			}
+		},
+		"InterruptHandler":{
+			"DisplayName" :"割込みハンドラ",
+			"Attributes" :{
+				"prcIdI":{
+					"VariableType"	:"Number",
+					"DisplayName"	:"割込みハンドラプロセッサID",
+					"AllocationType":"Dynamic",
+					"CanGrouping"	:true
+				},
+				"state":{
+					"VariableType"	:"String",
+					"DisplayName"	:"状態",
+					"AllocationType":"Dynamic",
+					"CanGrouping"	:false
+				},
+				"id":{
+					"VariableType"	:"Number",
+					"DisplayName"	:"ID",
+					"AllocationType":"Static",
+					"CanGrouping"	:false
+				}
+			},
+			"Behaviors"	:{
+				"enter":{
+					"DisplayName"	:"割込みハンドラー開始",
+				},
+				"leave":{
+					"DisplayName"	:"割込みハンドラー終了",
+				},
+				"enterSVC":{
+					"DisplayName"	:"サービスコール開始",
+					"Arguments"		:{
+						"name":"String",
+						"args":"String"
+					}
+				},
+				"leaveSVC":{
+					"DisplayName"	:"サービスコール終了",
+					"Arguments"		:{
+						"name":"String",
+						"args":"String"
+					}
+				}
+			}
+		},
+                "InterruptServiceRoutine":{
+			"DisplayName" :"割込みサービスルーチン",
+			"Attributes" :{
+				"prcIdR":{
+					"VariableType"	:"Number",
+					"DisplayName"	:"割込みサービスルーチンプロセッサID",
+					"AllocationType":"Dynamic",
+					"CanGrouping"	:true
+				},
+				"state":{
+					"VariableType"	:"String",
+					"DisplayName"	:"状態",
+					"AllocationType":"Dynamic",
+					"CanGrouping"	:false
+				},
+				"id":{
+					"VariableType"	:"Number",
+					"DisplayName"	:"ID",
+					"AllocationType":"Static",
+					"CanGrouping"	:false
+				}
+                        },
+			"Behaviors"	:{
+				"enter":{
+					"DisplayName"	:"割込みサービスルーチン開始",
+				},
+				"leave":{
+					"DisplayName"	:"割込みサービスルーチン終了",
+				},
+				"enterSVC":{
+					"DisplayName"	:"サービスコール開始",
+					"Arguments"		:{
+						"name":"String",
+						"args":"String"
+					}
+				},
+				"leaveSVC":{
+					"DisplayName"	:"サービスコール終了",
+					"Arguments"		:{
+						"name":"String",
+						"args":"String"
+					}
+				}	
+			}
+                },
+	        "CyclicHandler":{
+			"DisplayName" :"周期ハンドラ",
+			"Attributes" :{
+				"prcIdC":{
+					"VariableType"	:"Number",
+					"DisplayName"	:"周期ハンドラプロセッサID",
+					"AllocationType":"Dynamic",
+					"CanGrouping"	:true
+				},
+				"state":{
+					"VariableType"	:"String",
+					"DisplayName"	:"状態",
+					"AllocationType":"Dynamic",
+					"CanGrouping"	:false
+				},
+				"id":{
+					"VariableType"	:"Number",
+					"DisplayName"	:"ID",
+					"AllocationType":"Static",
+					"CanGrouping"	:false
+				}
+                        },
+			"Behaviors"	:{
+				"enter":{
+					"DisplayName"	:"周期ハンドラー開始",
+				},
+				"leave":{
+					"DisplayName"	:"周期ハンドラー終了",
+				},
+				"enterSVC":{
+					"DisplayName"	:"サービスコール開始",
+					"Arguments"		:{
+						"name":"String",
+						"args":"String"
+					}
+				},
+				"leaveSVC":{
+					"DisplayName"	:"サービスコール終了",
+					"Arguments"		:{
+						"name":"String",
+						"args":"String"
+					}
+				}
+			}
+                },
+		"AlarmHandler":{
+			"DisplayName" :"アラームハンドラ",
+			"Attributes" :{
+				"prcIdA":{
+					"VariableType"	:"Number",
+					"DisplayName"	:"アラームハンドラプロセッサID",
+					"AllocationType":"Dynamic",
+					"CanGrouping"	:true
+				},
+				"state":{
+					"VariableType"	:"String",
+					"DisplayName"	:"状態",
+					"AllocationType":"Dynamic",
+					"CanGrouping"	:false
+				},
+				"id":{
+					"VariableType"	:"Number",
+					"DisplayName"	:"ID",
+					"AllocationType":"Static",
+					"CanGrouping"	:false
+				}
+			},
+			"Behaviors"	:{
+				"enter":{
+					"DisplayName"	:"アラームハンドラー開始",
+				},
+				"leave":{
+					"DisplayName"	:"アラームハンドラー終了",
+				},
+				"enterSVC":{
+					"DisplayName"	:"サービスコール開始",
+					"Arguments"		:{
+						"name":"String",
+						"args":"String"
+					}
+				},
+				"leaveSVC":{
+					"DisplayName"	:"サービスコール終了",
+					"Arguments"		:{
+						"name":"String",
+						"args":"String"
+					}
+				}
+			}
+		},
+                "CPUExceptionHandler":{
+			"DisplayName" :"CPU例外ハンドラ",
+			"Attributes" :{
+				"prcIdE":{
+					"VariableType"	:"Number",
+					"DisplayName"	:"CPU例外ハンドラプロセッサID",
+					"AllocationType":"Dynamic",
+					"CanGrouping"	:true
+				},
+				"state":{
+					"VariableType"	:"String",
+					"DisplayName"	:"状態",
+					"AllocationType":"Dynamic",
+					"CanGrouping"	:false
+				},
+				"id":{
+					"VariableType"	:"Number",
+					"DisplayName"	:"ID",
+					"AllocationType":"Static",
+					"CanGrouping"	:false
+				}
+                        },
+			"Behaviors"	:{
+				"enter":{
+					"DisplayName"	:"CPU例外ハンドラー開始",
+				},
+				"leave":{
+					"DisplayName"	:"CPU例外ハンドラー終了",
+				},
+				"enterSVC":{
+					"DisplayName"	:"サービスコール開始",
+					"Arguments"		:{
+						"name":"String",
+						"args":"String"
+					}
+				},
+				"leaveSVC":{
+					"DisplayName"	:"サービスコール終了",
+					"Arguments"		:{
+						"name":"String",
+						"args":"String"
+					}
+				}
+			}
+        	},
+        	"TaskExceptionRoutine":{
+			"DisplayName" :"タスク例外ルーチン",
+			"Attributes" :{
+				"prcIdX":{
+					"VariableType"	:"Number",
+					"DisplayName"	:"タスク例外ルーチンプロセッサID",
+					"AllocationType":"Dynamic",
+					"CanGrouping"	:true
+				},
+				"state":{
+					"VariableType"	:"String",
+					"DisplayName"	:"状態",
+					"AllocationType":"Dynamic",
+					"CanGrouping"	:false
+				},
+				"id":{
+					"VariableType"	:"Number",
+					"DisplayName"	:"ID",
+					"AllocationType":"Static",
+					"CanGrouping"	:false
+				}
+                        },
+			"Behaviors"	:{
+				"enter":{
+					"DisplayName"	:"タスク例外ルーチン開始",
+				},
+				"leave":{
+					"DisplayName"	:"タスク例外ルーチン終了",
+				},
+				"enterSVC":{
+					"DisplayName"	:"サービスコール開始",
+					"Arguments"		:{
+						"name":"String",
+						"args":"String"
+					}
+				},
+				"leaveSVC":{
+					"DisplayName"	:"サービスコール終了",
+					"Arguments"		:{
+						"name":"String",
+						"args":"String"
+					}
+				}
+			}
+        	},
+		"Task":{
+			"DisplayName" :"タスク",
+			"Attributes" :{
+				"prcId":{
+					"VariableType"	:"Number",
+					"DisplayName"	:"タスクプロセッサID",
+					"AllocationType":"Dynamic",
+					"CanGrouping"	:true
+				},
+				"id":{
+					"VariableType"	:"Number",
+					"DisplayName"	:"ID",
+					"AllocationType":"Static",
+					"CanGrouping"	:false
+				},
+				"atr":{
+					"VariableType"	:"String",
+					"DisplayName"	:"属性",
+					"AllocationType":"Static",
+					"CanGrouping"	:false
+				},
+				"pri":{
+					"VariableType"	:"Number",
+					"DisplayName"	:"優先度",
+					"AllocationType":"Dynamic",
+					"CanGrouping"	:true
+				},
+				"exinf":{
+					"VariableType"	:"String",
+					"DisplayName"	:"拡張情報",
+					"AllocationType":"Static",
+					"CanGrouping"	:false
+				},
+				"task":{
+					"VariableType"	:"String",
+					"DisplayName"	:"起動関数",
+					"AllocationType":"Static",
+					"CanGrouping"	:false
+				},
+				"stksz":{
+					"VariableType"	:"Number",
+					"DisplayName"	:"スタックサイズ",
+					"AllocationType":"Dynamic",
+					"CanGrouping"	:false
+				},
+				"stk":{
+					"VariableType"	:"String",
+					"DisplayName"	:"スタック番地",
+					"AllocationType":"Static",
+					"CanGrouping"	:false
+				},
+				"state":{
+					"VariableType"	:"String",
+					"DisplayName"	:"状態",
+					"AllocationType":"Dynamic",
+					"CanGrouping"	:false,
+					"Default"		:"DORMANT"
+				},
+				"applog_str":{
+					"VariableType"	:"String",
+					"DisplayName"	:"文字列",
+					"AllocationType":"Dynamic",
+					"CanGrouping"	:false,
+					"Default"	:""
+				},
+				"applog_state":{
+					"VariableType"	:"Number",
+					"DisplayName"	:"ユーザ定義状態",
+					"AllocationType":"Dynamic",
+					"CanGrouping"	:false,
+					"Default"	:0
+				}
+			},
+			"Behaviors"	:{
+				"preempt":{
+					"DisplayName"	:"プリエンプト"
+				},
+				"dispatch":{
+					"DisplayName"	:"ディスパッチ"
+				},
+				"activate":{
+					"DisplayName"	:"起動"
+				},
+				"wait":{
+					"DisplayName"	:"待ち"
+				},
+				"exit":{
+					"DisplayName"	:"終了"
+				},
+				"resume":{
+					"DisplayName"	:"再開"
+				},
+				"suspend":{
+					"DisplayName"	:"強制待ち"
+				},
+				"terminate":{
+					"DisplayName"	:"強制終了"
+				},
+				"releaseFromWaiting":{
+					"DisplayName"	:"待ち解除"
+				},
+				"enterSVC":{
+					"DisplayName"	:"サービスコールに入る",
+					"Arguments"		:{
+						"name":"String",
+						"args":"String"
+					}
+				},
+				"leaveSVC":{
+					"DisplayName"	:"サービスコールから出る",
+					"Arguments"		:{
+						"name":"String",
+						"args":"String"
+					}
+				}
+			}
+		},
+		"ApplogString":{
+			"DisplayName":"アプリログ（文字列）",
+			"Attributes":{
+				"id":{
+					"VariableType"	:"String",
+					"DisplayName"	:"ID",
+					"AllocationType":"Static",
+					"CanGrouping"	:false
+				},
+				"str":{
+					"VariableType"	:"String",
+					"DisplayName"	:"文字列",
+					"AllocationType":"Dynamic",
+					"CanGrouping"	:false,
+					"Default"	:""
+				}
+			}
+		},
+		"ApplogState":{
+			"DisplayName":"アプリログ（状態）",
+			"Attributes":{
+				"id":{
+					"VariableType"	:"String",
+					"DisplayName"	:"ID",
+					"AllocationType":"Static",
+					"CanGrouping"	:false
+				},
+				"state":{
+					"VariableType"	:"Number",
+					"DisplayName"	:"ユーザ定義状態",
+					"AllocationType":"Dynamic",
+					"CanGrouping"	:false,
+					"Default"		:0
+				}
+			}
+		}
+	}
+}

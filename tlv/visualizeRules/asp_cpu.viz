@@ -1,0 +1,25 @@
+﻿{
+	"asp_":{
+		"VisualizeRules":{
+			"load":{
+				"DisplayName":"ロード",
+                                "Style": "Script",
+                                "FileName": "c:/cygwin/bin/ruby",
+                                "Arguments": "visualizeScript/asp_load.rb"
+			},
+			"loadAverage":{
+				"DisplayName":"ロードアベレージ",
+                                "Style": "Script",
+                                "FileName": "c:/cygwin/bin/ruby",
+                                "Arguments": "visualizeScript/asp_load_avg.rb"
+			},
+			"exc":{
+				"DisplayName":"割込回数",
+                                "Style": "Script",
+                                "FileName": "c:/cygwin/bin/ruby",
+                                "Arguments": "visualizeScript/excep_count.rb"
+			}
+
+		}
+	}
+}

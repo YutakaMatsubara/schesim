@@ -1,0 +1,136 @@
+﻿{
+	"asp":
+	{
+		"\[(?<time>\d+)\] dispatch to task (?<id>\d+)\." : [
+			{
+				"$EXIST{Task(state==RUNNING)}"	:[
+					"[${time}]$RES_NAME{Task(state==RUNNING)}.preempt()",
+					"[${time}]$RES_NAME{Task(state==RUNNING)}.state=RUNNABLE",
+				]
+			},
+			"[${time}]$RES_NAME{Task(id==${id})}.dispatch()",
+			"[${time}]$RES_NAME{Task(id==${id})}.state=RUNNING",
+			"[${time}]CurrentContext.name=$RES_NAME{Task(id==${id})}",
+		],
+		"\[(?<time>\d+)\] task (?<id>\d+) becomes (?<state>[^\.]+)\." : [
+			{
+				"$ATTR{Task(id==${id}).state}==DORMANT && ${state}==RUNNABLE"			:"[${time}]$RES_NAME{Task(id==${id})}.activate()",
+				"$ATTR{Task(id==${id}).state}==RUNNING && ${state}==DORMANT"			:"[${time}]$RES_NAME{Task(id==${id})}.exit()",
+				"$ATTR{Task(id==${id}).state}==RUNNING && ${state}==WAITING"			:"[${time}]$RES_NAME{Task(id==${id})}.wait()",
+				"$ATTR{Task(id==${id}).state}==RUNNABLE && ${state}==SUSPENDED"			:"[${time}]$RES_NAME{Task(id==${id})}.suspend()",
+				"$ATTR{Task(id==${id}).state}==WAITING && ${state}==WAITING-SUSPENDED"		:"[${time}]$RES_NAME{Task(id==${id})}.suspend()",
+				"$ATTR{Task(id==${id}).state}==SUSPENDED && ${state}==RUNNABLE"			:"[${time}]$RES_NAME{Task(id==${id})}.resume()",
+				"$ATTR{Task(id==${id}).state}==WAITING-SUSPENDED && ${state}==WAITING"		:"[${time}]$RES_NAME{Task(id==${id})}.resume()",
+				"$ATTR{Task(id==${id}).state}==WAITING && ${state}==RUNNABLE"			:"[${time}]$RES_NAME{Task(id==${id})}.releaseFromWaiting()",
+				"$ATTR{Task(id==${id}).state}==WAITING-SUSPENDED && ${state}==SUSPENDED"	:"[${time}]$RES_NAME{Task(id==${id})}.releaseFromWaiting()",
+				"$ATTR{Task(id==${id}).state}==SUSPENDED && ${state}==DORMANT"			:"[${time}]$RES_NAME{Task(id==${id})}.terminate()",
+				"$ATTR{Task(id==${id}).state}==WAITING-SUSPENDED && ${state}==DORMANT"		:"[${time}]$RES_NAME{Task(id==${id})}.terminate()",
+				"$ATTR{Task(id==${id}).state}==WAITING && ${state}==DORMANT"			:"[${time}]$RES_NAME{Task(id==${id})}.terminate()",
+				"$ATTR{Task(id==${id}).state}==RUNNABLE && ${state}==DORMANT"			:"[${time}]$RES_NAME{Task(id==${id})}.terminate()"
+			},
+			"[${time}]$RES_NAME{Task(id==${id})}.state=${state}"
+		],
+		"\[(?<time>\d+)\] enter to (?<name>(?!sns)(?!get_utm)(?!ext_ker)[^ix]\w+[_]\w+)( (?<args>.+))?\.?"	:
+		{
+            		"$EXIST{Task(state==RUNNING)}"	:"[${time}]$RES_NAME{Task(state==RUNNING)}.enterSVC(${name}, ${args})"
+        	},
+		"\[(?<time>\d+)\] leave from (?<name>(?!sns)(?!get_utm)(?!ext_ker)[^ix]\w+[_]\w+)( (?<args>.+))?\.?"	:
+		{
+            		"$EXIST{Task(state==RUNNING)}"	:"[${time}]$RES_NAME{Task(state==RUNNING)}.leaveSVC(${name}, ${args})"
+        	},
+		"\[(?<time>\d+)\] enter to (?<name>(i\w+[_]\w+))( (?<args>.+))?\.?"	:
+		[
+            		"[${time}]$ATTR{CurrentContext.name}.enterSVC(${name}, ${args})"
+        	],
+		"\[(?<time>\d+)\] leave from (?<name>(i\w+[_]\w+))( (?<args>.+))?\.?"	:
+		[
+            		"[${time}]$ATTR{CurrentContext.name}.leaveSVC(${name}, ${args})"
+        	],
+		"\[(?<time>\d+)\] enter to (?<name>(x?sns[_]\w+))( (?<args>.+))?\.?"	:
+		[
+            		"[${time}]$ATTR{CurrentContext.name}.enterSVC(${name}, ${args})"
+        	],
+		"\[(?<time>\d+)\] leave from (?<name>(x?sns[_]\w+))( (?<args>.+))?\.?"	:
+		[
+            		"[${time}]$ATTR{CurrentContext.name}.leaveSVC(${name}, ${args})"
+        	],
+		"\[(?<time>\d+)\] enter to get_utm( (?<args>.+))?\.?"	:
+		[
+            		"[${time}]$ATTR{CurrentContext.name}.enterSVC(get_utm, ${args})"
+        	],
+		"\[(?<time>\d+)\] leave from get_utm( (?<args>.+))?\.?"	:
+		[
+            		"[${time}]$ATTR{CurrentContext.name}.leaveSVC(get_utm, ${args})"
+        	],
+		"\[(?<time>\d+)\] enter to ext_ker( (?<args>.+))?\.?"	:
+		[
+            		"[${time}]$ATTR{CurrentContext.name}.enterSVC(ext_ker, ${args})"
+        	],
+		"\[(?<time>\d+)\] leave from ext_ker( (?<args>.+))?\.?"	:
+		[
+            		"[${time}]$ATTR{CurrentContext.name}.leaveSVC(ext_ker, ${args})"
+        	],
+		"\[(?<time>\d+)\] enter to int handler (?<id>[^\.]+)\.?"	:[
+			"[${time}]$RES_NAME{InterruptHandler(id==${id})}.enter()",
+			"[${time}]$RES_NAME{InterruptHandler(id==${id})}.state=RUNNING",
+			"[${time}]CurrentContext.name=$RES_NAME{InterruptHandler(id==${id})}",
+		],
+		"\[(?<time>\d+)\] leave from int handler (?<id>[^\.]+)\.?"	:[
+			"[${time}]$RES_NAME{InterruptHandler(id==${id})}.leave()",
+			"[${time}]$RES_NAME{InterruptHandler(id==${id})}.state=DORMANT"
+		],
+		"\[(?<time>\d+)\] enter to isr (?<id>[^\.]+)\.?"	:[
+			"[${time}]$RES_NAME{InterruptServiceRoutine(id==${id})}.enter()",
+			"[${time}]$RES_NAME{InterruptServiceRoutine(id==${id})}.state=RUNNING",
+			"[${time}]CurrentContext.name=$RES_NAME{InterruptServiceRoutine(id==${id})}"
+		],
+		"\[(?<time>\d+)\] leave from isr (?<id>[^\.]+)\.?"	:[
+			"[${time}]$RES_NAME{InterruptServiceRoutine(id==${id})}.leave()",
+			"[${time}]$RES_NAME{InterruptServiceRoutine(id==${id})}.state=DORMANT",
+		],
+		"\[(?<time>\d+)\] enter to cyclic handler (?<id>[^\.]+)\.?"	:[
+			"[${time}]$RES_NAME{CyclicHandler(id==${id})}.enter()",
+			"[${time}]$RES_NAME{CyclicHandler(id==${id})}.state=RUNNING",
+			"[${time}]CurrentContext.name=$RES_NAME{CyclicHandler(id==${id})}",
+		],
+		"\[(?<time>\d+)\] leave from cyclic handler (?<id>[^\.]+)\.?"	:[
+			"[${time}]$RES_NAME{CyclicHandler(id==${id})}.leave()",
+			"[${time}]$RES_NAME{CyclicHandler(id==${id})}.state=DORMANT"
+		],
+		"\[(?<time>\d+)\] enter to alarm handler (?<id>[^\.]+)\.?"	:[
+			"[${time}]$RES_NAME{AlarmHandler(id==${id})}.enter()",
+			"[${time}]$RES_NAME{AlarmHandler(id==${id})}.state=RUNNING",
+			"[${time}]CurrentContext.name=$RES_NAME{AlarmHandler(id==${id})}",
+		],
+		"\[(?<time>\d+)\] leave from alarm handler (?<id>[^\.]+)\.?"	:[
+			"[${time}]$RES_NAME{AlarmHandler(id==${id})}.leave()",
+			"[${time}]$RES_NAME{AlarmHandler(id==${id})}.state=DORMANT"
+		],
+		"\[(?<time>\d+)\] enter to exc handler (?<id>[^\.]+)\.?"	:[
+			"[${time}]$RES_NAME{CPUExceptionHandler(id==${id})}.enter()",
+			"[${time}]$RES_NAME{CPUExceptionHandler(id==${id})}.state=RUNNING",
+			"[${time}]CurrentContext.name=$RES_NAME{CPUExceptionHandler(id==${id})}",
+		],
+		"\[(?<time>\d+)\] leave from exc handler (?<id>[^\.]+)\.?"	:[
+			"[${time}]$RES_NAME{CPUExceptionHandler(id==${id})}.leave()",
+			"[${time}]$RES_NAME{CPUExceptionHandler(id==${id})}.state=DORMANT"
+		],
+		"\[(?<time>\d+)\] enter to tex (?<id>[^\.]+)\.?"	:[
+			"[${time}]$RES_NAME{TaskExceptionRoutine}.enter()",
+			"[${time}]$RES_NAME{TaskExceptionRoutine}.state=RUNNING",
+			"[${time}]CurrentContext.name=$RES_NAME{TaskExceptionRoutine}",
+		],
+		"\[(?<time>\d+)\] leave from tex (?<id>[^\.]+)\.?"	:[
+			"[${time}]$RES_NAME{TaskExceptionRoutine}.leave()",
+			"[${time}]$RES_NAME{TaskExceptionRoutine}.state=DORMANT",
+		],
+		"\[(?<time>\d+)\] applog str : ID (?<rid>[^: ]+) : (?<str>[^\.]+)\.?"	:
+			"[${time}]$RES_NAME{ApplogString(id==${rid})}.str=${str}",
+		"\[(?<time>\d+)\] applog strtask : TASK (?<tid>[^: ]+) : (?<str>[^\.]+)\.?"	:
+			"[${time}]$RES_NAME{Task(id==${tid})}.applog_str=${str}",
+		"\[(?<time>\d+)\] applog state : ID (?<rid>[^: ]+) : (?<state>\d+)\.?"	:
+			"[${time}]$RES_NAME{ApplogState(id==${rid})}.state=${state}",
+		"\[(?<time>\d+)\] applog statetask : TASK (?<tid>[^: ]+) : (?<state>\d+)\.?"	:
+			"[${time}]$RES_NAME{Task(id==${tid})}.applog_state=${state}"
+	}
+}

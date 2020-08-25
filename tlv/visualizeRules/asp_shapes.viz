@@ -1,0 +1,22 @@
+{
+	"asp":{
+		"Shapes":{
+			"runningTaskChangeShapes":[
+				{
+					"Type":"Rectangle",
+					"Location":"0,0",
+					"Size":"100%,100%",
+					"Pen":{"Color":"${ARG0}","Width":1,"Alpha":255},
+					"Fill":"${ARG0}",
+					"Alpha":100
+				},
+				{
+					"Type":"Text",
+					"Size":"100%,100%",
+					"Font":{"Align":"TopLeft","Size":7},
+					"Text":"${ARG1}"
+				}
+			]
+		}
+	}
+}

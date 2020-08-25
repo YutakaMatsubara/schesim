@@ -1,0 +1,17 @@
+{
+	"asp":{
+		"VisualizeRules":{
+			"runningTaskChange":{
+				"DisplayName":"実行タスク変化",
+				"Shapes":{
+					"runningTaskChangeEvent":{
+						"DisplayName":"実行タスク",
+						"From":"Task(state!=RUNNING).state=RUNNING",
+						"To":"${FROM_TARGET}.state",
+						"Figures":"runningTaskChangeShapes($RES_COLOR{${FROM_TARGET}},$RES_NAME{${FROM_TARGET}})"
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,47 @@
+{
+	"tecs":
+	{
+		"Cell":{
+			"DisplayName":"セル",
+			"Attributes" :{
+				"active":{
+					"VariableType"	:"Boolean",
+					"DisplayName"	:"能動",
+					"AllocationType":"Dynamic",
+					"CanGrouping"	:false,
+					"Default"		:false
+				}
+			},
+			"Behaviors"	:{
+				"call":{
+					"Arguments"		:{
+						"cellName":"String",
+						"sigName":"String",
+						"args":"String"
+					}
+				},
+				"callback":{
+					"Arguments"		:{
+						"cellName":"String",
+						"sigName":"String",
+						"retValue":"String"
+					}
+				},
+				"called":{
+					"Arguments"		:{
+						"cellerName":"String",
+						"sigName":"String",
+						"args":"String"
+					}
+				},
+				"return":{
+					"Arguments"		:{
+						"cellName":"String",
+						"sigName":"String",
+						"retValue":"String"
+					}
+				}
+			}
+		}
+	}
+}

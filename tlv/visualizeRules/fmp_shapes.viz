@@ -1,0 +1,30 @@
+{
+	"fmp":{
+		"Shapes":{
+			"prcIdShapes":[
+				{
+					"Type":"Rectangle",
+					"Location":"0,0",
+					"Size":"100%,100%",
+					"Fill":"${ARG0}",
+					"Alpha":30
+				}
+			],
+			"runningTaskChangeShapes":[
+				{
+					"Type":"Rectangle",
+					"Area":["${ARG2},${ARG3}","100%,25%"],
+					"Pen":{"Color":"${ARG0}","Width":1,"Alpha":200},
+					"Fill":"${ARG0}",
+					"Alpha":100
+				},
+				{
+					"Type":"Text",
+					"Area":["${ARG2},${ARG3}","100%,25%"],
+					"Font":{"Align":"TopLeft","Size":7},
+					"Text":"${ARG1}"
+				}
+			]
+		}
+	}
+}
