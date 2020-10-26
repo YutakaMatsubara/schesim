@@ -113,6 +113,7 @@ class TASK
 
         if @actque > 0 
             @actque -= 1
+            print_log_actque
             init_task_thread
             print_log_dispatch_from
             make_runnable
@@ -164,15 +165,15 @@ class TASK
     #  タスクを実行できない状態に遷移した後の処理
     #
     #  この関数は，すでにタスクが実行できない状態（待ち状態もしくは休止
-    #  状態）になった後に呼び出される．タスクが実行できない状態に遷移し
-    #  た後は，対象タスクをレディーキューから外し，絶対デッドラインが設
+    #  状態）になる前に呼び出される．タスクが実行できない状態に遷移する
+    #  前に，対象タスクをレディーキューから外し，絶対デッドラインが設
     #  定されている場合（対象タスクがデッドラインをミスしている場合には，
     #  この時点ですでにデッドラインキューから外されている）には，デッド
     #  ラインキューからも外す．
     #
     public
     def make_non_runnable
-        if @release_time.size == @D.size
+        if @release_time.size == (@D.size + @actque)            
             # デッドラインミスをしていない場合
             $event.delete(@D[0])
             @D.shift
